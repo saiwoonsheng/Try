@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Homepage</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .login-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .login-icon img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .login-icon img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Homepage</h1>
+    <p th:if="${name}">Logged in as <strong th:text="${name}"></strong></p>
+
+    <div class="login-icon">
+        <a href="/oauth2/authorization/google"><img src="/images/google-icon.png" alt="Login with Google"/></a>
+        <a href="/oauth2/authorization/github"><img src="/images/github-icon.png" alt="Login with GitHub"/></a>
+<!--        <a href="/oauth2/authorization/facebook"><img src="/images/facebook-icon.png" alt="Login with Facebook"/></a>-->
+    </div>
+</body>
+</html>
